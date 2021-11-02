@@ -11,5 +11,6 @@ int		ft_isprint(int v);
 int		ft_strlen(char *v);
 void	*ft_memset(void *s, int value, size_t count);
 void	*ft_bzero(void *s, int n);
+void	*ft_memcpy(void *dest, const char *src, size_t len);
 
 #endif
