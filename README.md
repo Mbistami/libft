@@ -1,3 +1,5 @@
 # libft
 
-`gcc -Wall -g main.c -o output`
+`gcc ft_*.c -Wall -g main.c -o output`
+
+# Notes
