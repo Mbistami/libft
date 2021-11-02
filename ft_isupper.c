@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isupper(int v) // if Upper returns 1 else 0
+int	ft_isupper(int v)
 {
 	if (v >= 65 && v <= 90)
 		return (1);
