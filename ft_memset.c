@@ -6,23 +6,21 @@
 /*   By: mbistami <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 11:40:46 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/02 11:51:08 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/02 14:54:41 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void * memset(void *pointer, int value, size_t count)
+void	*ft_memset(void *pointer, int value, size_t count)
 {
-	int cursor;
+	size_t	cursor;
 
 	cursor = 0;
-	while (cursor != count)
+	while (cursor < count)
 	{
-		pointer[cursor] = value;
+		((unsigned char *)pointer)[cursor] = (unsigned char)value;
 		cursor++;
-	}
-	
-	printf("%s", pointer);
-	return (pointer);	
+	}	
+	return (pointer);
 }
