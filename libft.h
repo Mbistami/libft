@@ -1,15 +1,15 @@
-#include <stdio.h>
-#include <string.h>
-
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <stdio.h>
+# include <string.h>
 
-int ft_isdigit(int v);
-int ft_isupper(int v);
-int ft_isalpha(int v);
-int ft_isalnum(int v);
-int ft_isprint(int v);
-int ft_strlen(char *v);
-void *ft_memset( void *pointer, int value, size_t count);
+int		ft_isdigit(int v);
+int		ft_isupper(int v);
+int		ft_isalpha(int v);
+int		ft_isalnum(int v);
+int		ft_isprint(int v);
+int		ft_strlen(char *v);
+void	*ft_memset(void *s, int value, size_t count);
+void	*ft_bzero(void *s, int n);
 
 #endif

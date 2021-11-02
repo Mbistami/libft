@@ -9,9 +9,11 @@ int main(void){
    	// 	if (ft_isprint(c)!= 0)
     //          printf("%c ", c);
 	// printf("%d", ft_strlen("ssss\0ssss"));
-	char string[10] = "data";
-	printf("%s",string);
-	char *p = memset(string, 'a', 2);
-	char *p1 = ft_memset(string, 'a', 2);
-	printf("\n%s | %s", p, p1);
+	char string[10] = "datas";
+	// printf("%s",string);
+	//char *p = memset(string, 'a', 2);
+	// char *p1 = ft_memset(string, 'a', 2);
+	// printf("\n%s | %s", p, p1);
+
+	printf("%s", ft_bzero(string, 5));
 }
