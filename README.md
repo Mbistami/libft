@@ -1,5 +1,3 @@
-# libft
+# Usage
 
-`gcc ft_*.c -Wall -g main.c -o output`
-
-# Notes
+run `make -f Makefile`
