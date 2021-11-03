@@ -18,5 +18,5 @@ int main(void){
 	// printf("\n%s | %s", p, p1);
 	//printf("%s", ft_bzero(string, 5));
 
-	printf("%s | %s | %s", ft_memcpy(string, stringDest, 2), stringDest, string);
+	printf("%s | %s | %s", ft_memcpy(string, string + 2, 2), string, string);
 }
