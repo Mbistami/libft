@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/03 07:16:48 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/03 18:37:06 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 char			g_string[] = "33tas kkk ooo !@@#$$%";
 char			g_string_dest[10] = "data1";
+char			g_overlap_test[] = "hello world";
 
 // printf("%d|", ft_isupper('z')); // returns positive if uppercase.
 	// printf("%d|", ft_isdigit('5')); // returns positive if digit.
@@ -31,7 +32,7 @@ char			g_string_dest[10] = "data1";
 
 int	main(void)
 {	
-	printf("before copy %s\n", g_string);
-	ft_memcpy(g_string, g_string + 2, 2);
-	printf("after copy %s\n", g_string);
+	printf("before copy %s\n", g_overlap_test);
+	ft_memmove(g_overlap_test, g_overlap_test + 2, 2);
+	printf("after copy %s\n", g_overlap_test);
 }

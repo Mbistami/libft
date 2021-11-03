@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 15:38:29 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/02 16:08:33 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/03 17:07:03 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	*ft_bzero(void *s, int n)
 {
-	ft_memset(s, 48, n);
+	ft_memset(s, 0, n);
 	return (s);
 }
