@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/03 07:24:46 by mbistami          #+#    #+#             */
+/*   Updated: 2021/11/03 07:25:51 by mbistami         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdio.h>
@@ -12,5 +24,6 @@ int		ft_strlen(char *v);
 void	*ft_memset(void *s, int value, size_t count);
 void	*ft_bzero(void *s, int n);
 void	*ft_memcpy(void *dest, const char *src, size_t len);
+void	*ft_memmove(void *dest, const void *src, size_t size);
 
 #endif
