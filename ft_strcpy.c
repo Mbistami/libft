@@ -6,26 +6,17 @@
 /*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 19:07:09 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/04 04:34:36 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/04 06:46:14 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, char *src)
+size_t	ft_strlcpy(char *dst, char *src, size_t size)
 {
-	char		*d;
-	const char	*s;
-	int			len;
+	size_t	len;
 
-	d = dst;
-	s = src;
 	len = ft_strlen(src);
-	while (len--)
-	{
-		*d = *s;
-		d++;
-		s++;
-	}
-	return (dst);
+	ft_memcpy(dst, src, size);
+	return (len);
 }
