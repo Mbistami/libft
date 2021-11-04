@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/03 18:37:06 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/03 20:10:18 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,12 @@ char			g_overlap_test[] = "hello world";
 
 int	main(void)
 {	
+	char	buffer[11];
+	char	*returned;
+
 	printf("before copy %s\n", g_overlap_test);
 	ft_memmove(g_overlap_test, g_overlap_test + 2, 2);
 	printf("after copy %s\n", g_overlap_test);
+	returned = ft_strcpy(buffer, g_overlap_test);
+	printf("%s", returned);
 }
