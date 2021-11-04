@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/04 13:33:20 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/04 20:46:32 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char			g_string[] = "33tas kkk ooo !@@#$$%";
 char			g_string_dest[10] = "data1";
 char			g_overlap_test[] = "hello worldssssssssssssssssss";
 
-// printf("%d|", ft_isupper('z')); // returns positive if uppercase.
+	// printf("%d|", ft_isupper('z')); // returns positive if uppercase.
 	// printf("%d|", ft_isdigit('5')); // returns positive if digit.
 	// printf("%d|", ft_isalpha('+'));	// returns positive if alphanumeric.
 	// printf("%d|", ft_isalnum('2')); // returns positive if number.
@@ -45,4 +45,6 @@ int	main(void)
 		= ft_strlcpy(buffer, g_overlap_test,
 			sizeof(g_overlap_test));
 	printf("%s len: %zd", buffer, returned);
+	printf("%c", ft_tolower('H'));
+	printf("%c", ft_toupper('v'));
 }
