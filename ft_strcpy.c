@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 19:07:09 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/04 06:46:14 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/04 08:05:39 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 size_t	ft_strlcpy(char *dst, char *src, size_t size)
 {
-	size_t	len;
+	size_t		len;
 
-	len = ft_strlen(src);
-	ft_memcpy(dst, src, size);
+	dst = ft_bzero(dst, size + 1);
+	ft_memmove(dst, src, size);
+	len = strlen(src);
+	*(dst + size) = '\0';
 	return (len);
 }

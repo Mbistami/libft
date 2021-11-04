@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/04 06:50:06 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/04 08:05:33 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,12 @@ char			g_overlap_test[] = "hello world";
 
 int	main(void)
 {	
-	char	buffer[11];
+	char	buffer[12];
 	size_t	returned;
 
 	printf("%s||", buffer);
 	returned
 		= ft_strlcpy(buffer, g_overlap_test,
-			ft_strlen(g_overlap_test) * sizeof(char));
-	printf("%s", buffer);
-	printf("%zd", returned);
+			sizeof(g_overlap_test));
+	printf("%s len: %zd", buffer, returned);
 }
