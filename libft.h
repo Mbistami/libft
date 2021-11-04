@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:24:46 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/04 07:35:25 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/04 08:10:16 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ void	*ft_bzero(void *s, int n);
 void	*ft_memcpy(void *dest, const char *src, size_t len);
 void	*ft_memmove(void *dest, void *src, size_t size);
 size_t	ft_strlcpy(char *dst, char *src, size_t size);
+size_t	ft_strlcat(char *dst, char *src, size_t size);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/04 08:05:33 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/04 13:33:20 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char			g_string[] = "33tas kkk ooo !@@#$$%";
 char			g_string_dest[10] = "data1";
-char			g_overlap_test[] = "hello world";
+char			g_overlap_test[] = "hello worldssssssssssssssssss";
 
 // printf("%d|", ft_isupper('z')); // returns positive if uppercase.
 	// printf("%d|", ft_isdigit('5')); // returns positive if digit.
@@ -35,9 +35,11 @@ char			g_overlap_test[] = "hello world";
 
 int	main(void)
 {	
-	char	buffer[12];
+	char	buffer[sizeof(g_overlap_test) + 1];
+	char	value[5];
 	size_t	returned;
 
+	value[5] = "hello";
 	printf("%s||", buffer);
 	returned
 		= ft_strlcpy(buffer, g_overlap_test,
