@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/04 20:46:32 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/05 10:20:18 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char			g_string[] = "33tas kkk ooo !@@#$$%";
 char			g_string_dest[10] = "data1";
-char			g_overlap_test[] = "hello worldssssssssssssssssss";
+char			g_overlap_test[] = "hello world";
 
 	// printf("%d|", ft_isupper('z')); // returns positive if uppercase.
 	// printf("%d|", ft_isdigit('5')); // returns positive if digit.
@@ -32,19 +32,23 @@ char			g_overlap_test[] = "hello worldssssssssssssssssss";
 	// printf("before copy %s\n", g_overlap_test);
 	// ft_memmove(g_overlap_test, g_overlap_test + 2, 2);
 	// printf("after copy %s\n", g_overlap_test);
+	// printf("%s||", buffer);
+	// returned
+	// 	= ft_strlcpy(buffer, g_overlap_test,
+	// 		sizeof(g_overlap_test));
+	// printf("%s len: %zd", buffer, returned);
+	// printf("%c", ft_tolower('H'));
+	// printf("%c", ft_toupper('v'));
 
 int	main(void)
 {	
-	char	buffer[sizeof(g_overlap_test) + 1];
+	char	buffer[100] = "this is a string ";
 	char	value[5];
 	size_t	returned;
-
-	value[5] = "hello";
-	printf("%s||", buffer);
-	returned
-		= ft_strlcpy(buffer, g_overlap_test,
-			sizeof(g_overlap_test));
-	printf("%s len: %zd", buffer, returned);
-	printf("%c", ft_tolower('H'));
-	printf("%c", ft_toupper('v'));
+	printf("starting strlcat\nsrc : %s\nlen src: %d\nbuffer: %s",
+		g_overlap_test,
+		ft_strlen(g_overlap_test),
+		buffer);
+	printf("\nft_strlcat return: %ld\nnew buffer : %s",
+		ft_strlcat(buffer, "THIS IS THE FINAL TEST", 20), buffer);
 }
