@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/05 11:02:05 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/05 20:23:18 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,7 @@ int	main(void)
 		buffer);
 	printf("\nft_strlcat return: %ld\nnew buffer : %s",
 		ft_strlcat(buffer, "THIS IS THE FINAL TEST", 20), buffer);
+	printf("%s\n", ft_strchr("hello", 111));
+	printf("%s", ft_strrchr("world", 111));
+	
 }

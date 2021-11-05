@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ strchr.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 20:48:02 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/05 20:16:10 by mbistami         ###   ########.fr       */
+/*   Created: 2021/11/05 20:17:32 by mbistami          #+#    #+#             */
+/*   Updated: 2021/11/05 20:32:10 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char	*string, int searchChar)
+#include "libft.h"
+
+char	*ft_strrchr(const char *string, int searchChar)
 {
 	char	*s;
-
+	int		len;
+	char	*last;
+	
 	s = (char *)string;
-	while (*s++)
+	len = ft_strlen(s);
+	s = s + len - 1;
+	while (*s--)
 		if(*s == searchChar)
 			return ((char *) string);
+
 	return (0);
 }

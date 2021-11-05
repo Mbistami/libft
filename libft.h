@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:24:46 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/04 20:45:42 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/05 20:22:17 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ size_t	ft_strlcpy(char *dst, char *src, size_t size);
 size_t	ft_strlcat(char *dst, char *src, size_t size);
 unsigned char	ft_tolower(int c);
 unsigned char	ft_toupper(int c);
+char			*ft_strchr(const char *string, int searchChar);
+char			*ft_strrchr(const char *string, int searchChar);
 
 #endif
