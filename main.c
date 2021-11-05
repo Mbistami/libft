@@ -6,7 +6,7 @@
 /*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/06 00:17:16 by gruz             ###   ########.fr       */
+/*   Updated: 2021/11/06 00:33:15 by gruz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int	main(void)
 	char	buffer[25] = "this is a string  ";
 	char	value[5];
 	size_t	returned;
-	float	f = [1.3, 2.3];
 
 	printf("starting strlcat\nsrc : %s\nlen src: %d\nbuffer: %s",
 		g_overlap_test,
@@ -55,4 +54,5 @@ int	main(void)
 		ft_strlcat(buffer, "THIS IS THE FINAL TEST", sizeof(buffer)), buffer);
 	printf("\n%d", strncmp("aellAsssss", "hellosss", 5));
 	printf("\n%p", ft_memchr("AhDlls", 68, sizeof("AhlllsD")));
+	printf("\n%d", memcmp("AhDlls", "shDlls", sizeof("AhDlls")));
 }
