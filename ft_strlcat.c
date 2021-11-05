@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 08:09:12 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/05 10:21:30 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/05 21:25:40 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlcat(char *dst, char *src, size_t size)
 	if (!*src)
 		return (len_dst);
 	i = 0;
-	while (src[i])
+	while (len_dst + i < size - 1)
 	{
 		*(dst + (len_dst + i)) = *(src + i);
 		i ++;
