@@ -6,7 +6,7 @@
 /*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:24:46 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/05 23:14:03 by gruz             ###   ########.fr       */
+/*   Updated: 2021/11/05 23:34:48 by gruz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ unsigned char	ft_tolower(int c);
 unsigned char	ft_toupper(int c);
 char			*ft_strchr(const char *string, int searchChar);
 char			*ft_strrchr(const char *string, int searchChar);
+int				ft_strncmp(const char *first,
+					const char *second, size_t length);
 
 #endif

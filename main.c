@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/05 21:25:18 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/05 23:56:58 by gruz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char			g_overlap_test[] = "hello world";
 
 int	main(void)
 {	
-	char	buffer[35] = "this is a string  ";
+	char	buffer[25] = "this is a string  ";
 	char	value[5];
 	size_t	returned;
 	printf("starting strlcat\nsrc : %s\nlen src: %d\nbuffer: %s",
@@ -50,7 +50,6 @@ int	main(void)
 		ft_strlen(g_overlap_test),
 		buffer);
 	printf("\nft_strlcat return: %ld\nnew buffer : %s",
-		ft_strlcat(buffer, "THIS IS THE FINAL TESTxxdd", sizeof(buffer)), buffer);
-	
-	
+		ft_strlcat(buffer, "THIS IS THE FINAL TEST", sizeof(buffer)), buffer);
+	printf("\n%d", strncmp("aellAsssss", "hellosss", 5));
 }
