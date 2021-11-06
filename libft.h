@@ -6,7 +6,7 @@
 /*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:24:46 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/06 01:58:03 by gruz             ###   ########.fr       */
+/*   Updated: 2021/11/06 02:39:10 by gruz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stdio.h>
 # include <string.h>
+# include <stdlib.h>
 
 int				ft_isdigit(int v);
 int				ft_isupper(int v);

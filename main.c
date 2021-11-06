@@ -6,7 +6,7 @@
 /*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/06 02:34:00 by gruz             ###   ########.fr       */
+/*   Updated: 2021/11/06 03:21:13 by gruz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,12 @@ char			g_overlap_test[] = "hello world";
 	// printf("%s len: %zd", buffer, returned);
 	// printf("%c", ft_tolower('H'));
 	// printf("%c", ft_toupper('v'));
+	//printf("\nft_strlcat return: %ld\nnew buffer : %s",
+	//	ft_strlcat(buffer, "THIS IS THE FINAL TEST", sizeof(buffer)), buffer);
+	//printf("\n%d", strncmp("hellossssA", "helloFss", sizeof("aellAsssss")));
+	//printf("\n%p", ft_memchr("AhDlls", 68, sizeof("AhlllsD")));
+	//printf("\n%d", ft_memcmp("AhDllssss", "shDlls", sizeof("AhDllssss")));
+	//printf("\n%s", ft_strnstrn("THIS IS THE zf FINAL TEST z", "", sizeof("THIS IS THE FINAL TEST")));
 
 int	main(void)
 {	
@@ -50,10 +56,5 @@ int	main(void)
 		g_overlap_test,
 		ft_strlen(g_overlap_test),
 		buffer);
-	printf("\nft_strlcat return: %ld\nnew buffer : %s",
-		ft_strlcat(buffer, "THIS IS THE FINAL TEST", sizeof(buffer)), buffer);
-	printf("\n%d", strncmp("hellossssA", "helloFss", sizeof("aellAsssss")));
-	//printf("\n%p", ft_memchr("AhDlls", 68, sizeof("AhlllsD")));
-	//printf("\n%d", ft_memcmp("AhDllssss", "shDlls", sizeof("AhDllssss")));
-	printf("\n%s", ft_strnstrn("THIS IS THE zf FINAL TEST z", "", sizeof("THIS IS THE FINAL TEST")));
+	printf("\nft_atoi result:%d", ft_atoi("   -12235"));
 }
