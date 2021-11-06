@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/06 03:21:13 by gruz             ###   ########.fr       */
+/*   Updated: 2021/11/06 14:39:17 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,18 @@ char			g_overlap_test[] = "hello world";
 	//printf("\n%p", ft_memchr("AhDlls", 68, sizeof("AhlllsD")));
 	//printf("\n%d", ft_memcmp("AhDllssss", "shDlls", sizeof("AhDllssss")));
 	//printf("\n%s", ft_strnstrn("THIS IS THE zf FINAL TEST z", "", sizeof("THIS IS THE FINAL TEST")));
+	// "printf("starting strlcat\nsrc : %s\nlen src: %d\nbuffer: %s",
+	// 	g_overlap_test,
+	// 	ft_strlen(g_overlap_test),
+	// 	buffer);
+	// printf("\nft_atoi result:%d", ft_atoi("   -12235"));
 
 int	main(void)
 {	
-	char	buffer[25] = "this is a string  ";
+	char	buffer[0];
 	char	value[5];
 	size_t	returned;
 
-	printf("starting strlcat\nsrc : %s\nlen src: %d\nbuffer: %s",
-		g_overlap_test,
-		ft_strlen(g_overlap_test),
-		buffer);
-	printf("\nft_atoi result:%d", ft_atoi("   -12235"));
+	*buffer = (char) ft_calloc(10, sizeof(char));
+	printf("%s", buffer);
 }
