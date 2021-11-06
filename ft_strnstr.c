@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 00:21:44 by gruz              #+#    #+#             */
-/*   Updated: 2021/11/06 00:38:43 by gruz             ###   ########.fr       */
+/*   Created: 2021/11/06 00:56:01 by gruz              #+#    #+#             */
+/*   Updated: 2021/11/06 02:33:49 by gruz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *ptr1, const void *ptr2, size_t length)
+char	*ft_strnstrn(const char *big, const char *little, size_t len)
 {
-	char	*p1;
-	char	*p2;
+	size_t	i;
+	char	*b;
+	char	*l;
+	size_t	size;
 
-	p1 = (char *)ptr1;
-	p2 = (char *)ptr2;
-	while (length-- && (*p1 != '\0' || *p2 != '\0'))
-	{	
-		if (*(++p1) != *(++p2))
+	i = 0;
+	b = (char *)big;
+	l = (char *)little;
+	size = ft_strlen(l);
+	if (size == 0)
+		return ((char *)big);
+	while (len-- && size != i)
+	{
+		if (*b != *l)
 		{
-			return (*p2 -*p1);
+			l = l - i;
+			i = 0;
 		}
+		b++;
+		l++;
+		i++;
 	}
+	if (size == i)
+		return ((char *)little);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/06 00:33:15 by gruz             ###   ########.fr       */
+/*   Updated: 2021/11/06 02:34:00 by gruz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ int	main(void)
 		buffer);
 	printf("\nft_strlcat return: %ld\nnew buffer : %s",
 		ft_strlcat(buffer, "THIS IS THE FINAL TEST", sizeof(buffer)), buffer);
-	printf("\n%d", strncmp("aellAsssss", "hellosss", 5));
-	printf("\n%p", ft_memchr("AhDlls", 68, sizeof("AhlllsD")));
-	printf("\n%d", memcmp("AhDlls", "shDlls", sizeof("AhDlls")));
+	printf("\n%d", strncmp("hellossssA", "helloFss", sizeof("aellAsssss")));
+	//printf("\n%p", ft_memchr("AhDlls", 68, sizeof("AhlllsD")));
+	//printf("\n%d", ft_memcmp("AhDllssss", "shDlls", sizeof("AhDllssss")));
+	printf("\n%s", ft_strnstrn("THIS IS THE zf FINAL TEST z", "", sizeof("THIS IS THE FINAL TEST")));
 }

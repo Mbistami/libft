@@ -6,7 +6,7 @@
 /*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:24:46 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/06 00:26:43 by gruz             ###   ########.fr       */
+/*   Updated: 2021/11/06 01:58:03 by gruz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ int				ft_strncmp(const char *first,
 					const char *second, size_t length);
 void			*ft_memchr(const void *mb, int searchedChar, size_t size);
 int				ft_memcmp(const void *ptr1, const void *ptr2, size_t length);
+char			*ft_strnstrn(const char *big, const char *little, size_t len);
 
 #endif
