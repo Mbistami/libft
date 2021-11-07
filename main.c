@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/06 15:00:14 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/06 19:53:47 by gruz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ int	main(void)
 	size_t	returned;
 
 	buffer = (char *)strdup("SSSSS");
-	printf("%s", buffer);
+	//printf("%s", buffer);
+	printf("||%s||", ft_substr("Source", 2, 3));
 }
