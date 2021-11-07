@@ -6,7 +6,7 @@
 /*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 19:04:40 by gruz              #+#    #+#             */
-/*   Updated: 2021/11/07 12:06:44 by gruz             ###   ########.fr       */
+/*   Updated: 2021/11/07 14:14:54 by gruz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ char    *ft_substr(const char *src, unsigned int start, size_t len)
     s = (char *)src + start;
     r = (char *)ft_calloc(sizeof(*s), (len - 1));
     i = 0;
+    printf("\nS:%d, L:%d, Src:%s\n",start, len, src);
     while (len--)
     {
         if(!*(s+i))
