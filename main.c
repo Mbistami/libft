@@ -6,7 +6,7 @@
 /*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/06 19:53:47 by gruz             ###   ########.fr       */
+/*   Updated: 2021/11/07 12:34:58 by gruz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,5 @@ int	main(void)
 	buffer = (char *)strdup("SSSSS");
 	//printf("%s", buffer);
 	printf("||%s||", ft_substr("Source", 2, 3));
+	printf("(%s)", ft_strjoin("car1231car1232", "sdadadsdadadsdadad"));
 }

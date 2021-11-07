@@ -6,7 +6,7 @@
 /*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:24:46 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/06 19:13:28 by gruz             ###   ########.fr       */
+/*   Updated: 2021/11/07 12:32:18 by gruz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,20 @@
 # include <stdio.h>
 # include <string.h>
 # include <stdlib.h>
+# include <bsd/string.h>
 
 int				ft_isdigit(int v);
 int				ft_isupper(int v);
 int				ft_isalpha(int v);
 int				ft_isalnum(int v);
 int				ft_isprint(int v);
-int				ft_strlen(char *v);
+size_t			ft_strlen(const char *v);
 void			*ft_memset(void *s, int value, size_t count);
-void			*ft_bzero(void *s, int n);
-void			*ft_memcpy(void *dest, const char *src, size_t len);
-void			*ft_memmove(void *dest, void *src, size_t size);
-size_t			ft_strlcpy(char *dst, char *src, size_t size);
-size_t			ft_strlcat(char *dst, char *src, size_t size);
+void			*ft_bzero(void *s, int len_to_fill);
+void			*ft_memcpy(void *dest, const char *src, size_t size_of_src);
+void			*ft_memmove(void *dest, void *src, size_t siz_of_src);
+size_t			ft_strlcpy(char *dst, const char *src, size_t size_of_dst);
+size_t			ft_strlcat(char *dst, const char *src, size_t size_of_dst);
 unsigned char	ft_tolower(int c);
 unsigned char	ft_toupper(int c);
 char			*ft_strchr(const char *string, int searchChar);
@@ -40,5 +41,6 @@ char			*ft_strnstrn(const char *big, const char *little, size_t len);
 void			*ft_calloc(size_t elementCount, size_t elementSize);
 char			*ft_strdup(const char *src);
 char			*ft_substr(char const *src, unsigned int start, size_t len);
+char			*ft_strjoin(const char *s1, const char *s2);
 
 #endif

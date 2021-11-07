@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 19:07:09 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/07 12:18:32 by gruz             ###   ########.fr       */
+/*   Created: 2021/11/07 12:11:27 by gruz              #+#    #+#             */
+/*   Updated: 2021/11/07 12:35:12 by gruz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size_of_dst)
+char    *ft_strjoin(const char *s1, const char *s2)
 {
-	size_t		len;
-	char		*d;
-	char		*s;
+    char    *result;
+    size_t  max_len;
 
-	d = dst;
-	s = src;
-	while (size_of_dst--)
-		*d++ = *s++;
-	len = strlen(src);
-	*(dst + ft_strlen(dst)) = '\0';
-	return (len);
+    max_len = ft_strlen(s1) + ft_strlen(s2);
+    result = (char *) ft_calloc(max_len + 1, sizeof(char));
+    if (sizeof(result) <= 0)
+        return (ft_strdup(""));
+    ft_strlcpy(result, s1, max_len);
+    ft_strlcat(result, s2, max_len + 1);
+    return(result);
 }

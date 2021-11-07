@@ -6,4 +6,4 @@ OUTPUT=executeMe
 
 
 make: ${SRC}
-	${CC} ${SRC} ${CFLAGS} main.c -o ${OUTPUT}
+	${CC} ${SRC} ${CFLAGS} main.c -o ${OUTPUT} -lbsd
