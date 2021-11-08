@@ -10,12 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *v)
+#include "libft.h"
+
+size_t 	ft_strlen(const char *v)
 {
 	int	counter;
-
+    if (v == NULL)
+        return  0;
 	counter = 0;
-	while (*v++)
-		counter++;
+    //printf("%s", v);
+	while (v[counter]  != '\0')
+    {
+        counter++;
+    }
 	return (counter);
 }

@@ -6,7 +6,7 @@
 /*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/07 14:43:21 by gruz             ###   ########.fr       */
+/*   Updated: 2021/11/08 18:09:07 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,16 @@ char			g_overlap_test[] = "hello world";
 	// printf("\nft_atoi result:%d", ft_atoi("   -12235"));
 
 int	main(void)
-{	
+{
 	char	*buffer;
 	char	value[5];
 	size_t	returned;
 
-	buffer = (char *)strdup("SSSSS");
+	//buffer = (char *)strdup("SSSSS");
 	//printf("%s", buffer);
-	printf("||%s||", ft_substr("Source", 2, 3));
-	printf("(%s)", ft_strjoin("car1231c\0 1232", "sdadadsdadadsdadad"));
-	printf("\n%s", ft_strtrim("###***s*test###**s*", "*#s"));
+	//printf("||%s||", ft_substr("Source", 2, 3));
+	//printf("(%s)", ft_strjoin("car1231c\0 1232", "sdadadsdadadsdadad"));
+	//printf("\nResult:%s", ft_strtrim("###***s*###**s*", "*#s"));
+    //printf("%s", ft_strdup("text"));
+    ft_split("test", 't');
 }

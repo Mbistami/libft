@@ -16,7 +16,6 @@ int     stop(char c, char *set)
 {
     while(*set)
     {
-        printf("%c|%c\n", c, *set);
         if(*set == c)
         {
             printf("Found continue return 0 stop()\n");
@@ -38,10 +37,10 @@ char    *ft_strtrim(const char *s1, const char *set)
     start = 1;
     end = 1;
     i = 0;
-    result = s1;
+    result = (char *)s1;
     while (end)
     {
-        if(stop(*(result + i), set))
+        if(stop(*(result + i), (char  *)set))
         {
             if(start != 1)
             {
@@ -49,13 +48,15 @@ char    *ft_strtrim(const char *s1, const char *set)
                 return (result);
             }
             result = ft_substr(result, i, (ft_strlen(result) - i));
-            printf("*****swapping!");
             start = 0;
             i = ft_strlen(result) - 1;
         }
         printf("result now: %s\n", result);
+        if (i == ft_strlen(s1) - 1) return (ft_strdup(""));
         if(start) i++;
         else i--; 
     }
     
 }
+
+

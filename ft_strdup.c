@@ -20,8 +20,10 @@ char	*ft_strdup(const char *src)
 	size_t	len_changed;
 
 	source = (char *)src;
+    printf("SOURCE:%s", src);
 	len = ft_strlen(source);
-	s = (char *) ft_calloc(len, sizeof(char));
-	len_changed = ft_strlcpy(s, source, len);
+	s = (char *) malloc((len + 1) * sizeof(char));
+    printf("SIZE OF DEST: %zu", sizeof(s));
+    ft_strlcpy(s, source, sizeof(s));
 	return (s);
 }

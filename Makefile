@@ -6,4 +6,4 @@ OUTPUT=executeMe
 
 
 make: ${SRC}
-	${CC} ${SRC} ${CFLAGS} main.c -o ${OUTPUT} -lbsd
+	${CC} ${SRC} ${CFLAGS} main.c -o ${OUTPUT} -g -fsanitize=address

@@ -17,12 +17,19 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size_of_dst)
 	size_t		len;
 	char		*d;
 	char		*s;
+    size_t      i;
 
 	d = dst;
-	s = src;
-	while (size_of_dst--)
-		*d++ = *s++;
+	s = (char *)src;
+    i = 0;
+	while (src[i])
+    {
+        dst[i] = s[i];
+        printf("\n%c^%c\n", dst[i], s[i]);
+        i++;
+    }
 	len = strlen(src);
-	*(dst + ft_strlen(dst)) = '\0';
+    printf("%zu", sizeof(len));
+	*(dst + (len)) = '\0';
 	return (len);
 }

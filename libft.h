@@ -15,7 +15,7 @@
 # include <stdio.h>
 # include <string.h>
 # include <stdlib.h>
-# include <bsd/string.h>
+# include <string.h>
 
 int				ft_isdigit(int v);
 int				ft_isupper(int v);
@@ -43,5 +43,6 @@ char			*ft_strdup(const char *src);
 char			*ft_substr(char const *src, unsigned int start, size_t len);
 char			*ft_strjoin(const char *s1, const char *s2);
 char    		*ft_strtrim(const char *s1, const char *set);
+char            **ft_split(const char *s, const char c);
 
 #endif
