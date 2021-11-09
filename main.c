@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/08 18:09:07 by                  ###   ########.fr       */
+/*   Updated: 2021/11/09 09:33:14 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char			g_overlap_test[] = "hello world";
 
 int	main(void)
 {
-	char	*buffer;
+	char	**buffer;
 	char	value[5];
 	size_t	returned;
 
@@ -61,7 +61,16 @@ int	main(void)
 	//printf("%s", buffer);
 	//printf("||%s||", ft_substr("Source", 2, 3));
 	//printf("(%s)", ft_strjoin("car1231c\0 1232", "sdadadsdadadsdadad"));
-	//printf("\nResult:%s", ft_strtrim("###***s*###**s*", "*#s"));
+	printf("\nResult:%sTRIM\n", ft_strtrim("$$$$$", "$"));
     //printf("%s", ft_strdup("text"));
-    ft_split("test", 't');
+    buffer = ft_split("$test1$$$$test2$$$$$test3", '$');
+	returned = 0;
+	printf("%ld", sizeof(buffer));
+	for (size_t i = 0; i < 6; i++)
+	{
+		printf("\n%s|%d\n", buffer[i], i);
+	}
+	
+	
+	
 }

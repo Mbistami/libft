@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 12:37:27 by gruz              #+#    #+#             */
-/*   Updated: 2021/11/07 14:42:44 by gruz             ###   ########.fr       */
+/*   Updated: 2021/11/09 09:31:45 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char    *ft_strtrim(const char *s1, const char *set)
 {
     int start;
     int end;
-    ssize_t i;
+    size_t i;
     char    *result;
 
     start = 1;
@@ -44,7 +44,7 @@ char    *ft_strtrim(const char *s1, const char *set)
         {
             if(start != 1)
             {
-                result[i + 1] = '\0';
+                result[i+2] = '\0';
                 return (result);
             }
             result = ft_substr(result, i, (ft_strlen(result) - i));
@@ -52,7 +52,7 @@ char    *ft_strtrim(const char *s1, const char *set)
             i = ft_strlen(result) - 1;
         }
         printf("result now: %s\n", result);
-        if (i == ft_strlen(s1) - 1) return (ft_strdup(""));
+        
         if(start) i++;
         else i--; 
     }
