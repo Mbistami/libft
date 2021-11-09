@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 18:02:43 by                   #+#    #+#             */
-/*   Updated: 2021/11/09 09:26:52 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/09 09:37:47 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ char    **ft_split(char const *s, const char c)
     delimiter[0] = c;
     delimiter[1] = '\0';
     size_t  matches;
-    printf("**Occurrence Found: %d\n**Source:%s\n**Delimiter: %c", countOccurrence(s, c), s, c);
     i = 0;
     r = ft_strtrim((char *)s, delimiter);
     to_return = malloc((countOccurrence(s, c) + 1) * sizeof(char *));
@@ -49,11 +48,8 @@ char    **ft_split(char const *s, const char c)
         if (r[i] == c)
         {
             cursor = (char *)ft_substr(r, 0, i);
-            printf("\n|%s|, inserted cursor %d\n", cursor, countOccurrence(r, c));
             cursor = ft_strtrim(cursor, delimiter);
-            printf("\n|%s|, inserted cursor %d\n", cursor, countOccurrence(r, c));
             r = ft_substr(r, i + 1, ((ft_strlen(r) - 1) - i));
-            printf("\nJJJJ%s  %dJJJJ\n", cursor, countOccurrence(cursor, c));
             
             if(ft_strlen(cursor) > 0)
             {

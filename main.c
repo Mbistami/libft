@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/09 09:33:14 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/09 09:39:19 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,18 @@ char			g_overlap_test[] = "hello world";
 	//printf("\n%d", strncmp("hellossssA", "helloFss", sizeof("aellAsssss")));
 	//printf("\n%p", ft_memchr("AhDlls", 68, sizeof("AhlllsD")));
 	//printf("\n%d", ft_memcmp("AhDllssss", "shDlls", sizeof("AhDllssss")));
-	//printf("\n%s", ft_strnstrn("THIS IS THE zf FINAL TEST z", "", sizeof("THIS IS THE FINAL TEST")));
+	//  printf("\n%s", ft_strnstrn("THIS IS THE zf FINAL TEST z", "",
+	// sizeof("THIS IS THE FINAL TEST")));
 	// "printf("starting strlcat\nsrc : %s\nlen src: %d\nbuffer: %s",
 	// 	g_overlap_test,
 	// 	ft_strlen(g_overlap_test),
 	// 	buffer);
 	// printf("\nft_atoi result:%d", ft_atoi("   -12235"));
+	//buffer = (char *)strdup("SSSSS");
+	//printf("%s", buffer);
+	//printf("||%s||", ft_substr("Source", 2, 3));
+	//printf("(%s)", ft_strjoin("car1231c\0 1232", "sdadadsdadadsdadad"));
+	//printf("%s", ft_strdup("text"));
 
 int	main(void)
 {
@@ -57,20 +63,13 @@ int	main(void)
 	char	value[5];
 	size_t	returned;
 
-	//buffer = (char *)strdup("SSSSS");
-	//printf("%s", buffer);
-	//printf("||%s||", ft_substr("Source", 2, 3));
-	//printf("(%s)", ft_strjoin("car1231c\0 1232", "sdadadsdadadsdadad"));
 	printf("\nResult:%sTRIM\n", ft_strtrim("$$$$$", "$"));
-    //printf("%s", ft_strdup("text"));
-    buffer = ft_split("$test1$$$$test2$$$$$test3", '$');
+	buffer = ft_split("   test1     23132 , 131323  ", ' ');
 	returned = 0;
 	printf("%ld", sizeof(buffer));
-	for (size_t i = 0; i < 6; i++)
+	for (size_t i = 0; i < 4; i++)
 	{
 		printf("\n%s|%d\n", buffer[i], i);
 	}
-	
-	
 	
 }
