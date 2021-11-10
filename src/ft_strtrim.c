@@ -18,12 +18,10 @@ int     stop(char c, char *set)
     {
         if(*set == c)
         {
-            printf("Found continue return 0 stop()\n");
             return(0);
         }
         set++;
     }
-    printf("Found continue return 1 stop()\n");
     return (1);
 }
 
@@ -51,8 +49,6 @@ char    *ft_strtrim(const char *s1, const char *set)
             start = 0;
             i = ft_strlen(result) - 1;
         }
-        printf("result now: %s\n", result);
-        
         if(start) i++;
         else i--; 
     }

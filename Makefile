@@ -1,9 +1,43 @@
-CC=gcc
-CFLAGS=-Wall -g
-DEPS=libft.h
-SRC=ft_*.c
-OUTPUT=executeMe
+NAME=libft.a
+SRC=./src/ft_atoi.c\
+    ./src/ft_calloc.c\
+    ./src/ft_isalpha.c\
+    ./src/ft_isprint.c\
+    ./src/ft_memchr.c\
+    ./src/ft_memcpy.c\
+    ./src/ft_memset.c\
+    ./src/ft_strchr.c\
+    ./src/ft_strjoin.c\
+    ./src/ft_strlcpy.c\
+    ./src/ft_strncmp.c\
+    ./src/ft_strrchr.c\
+    ./src/ft_substr.c\
+    ./src/ft_toupper.c\
+    ./src/ft_bzero.c\
+    ./src/ft_isalnum.c\
+    ./src/ft_isdigit.c\
+    ./src/ft_isupper.c\
+    ./src/ft_memcmp.c\
+    ./src/ft_memove.c\
+    ./src/ft_split.c\
+    ./src/ft_strdup.c\
+    ./src/ft_strlcat.c\
+    ./src/ft_strlen.c\
+    ./src/ft_strnstr.c\
+    ./src/ft_strtrim.c\
+    ./src/ft_tolower.c
+OBJS=$(SRC:.c=.o)
+OUTPUT=output
 
+%.o:%.c
+		gcc -c -I ./ -o $@ $<
+all:$(NAME)
 
-make: ${SRC}
-	${CC} ${SRC} ${CFLAGS} main.c -o ${OUTPUT} -g 
+$(NAME):$(OBJS)
+	ar rc $(NAME) $(OBJS)
+clean:
+	rm $(NAME) && rm -rf ./src/*.o  &&\
+	echo "CLEANED"
+um:${NAME}
+	${CC} $(NAME) ${CFLAGS} main.c -o ${OUTPUT} -g
+	./$(OUTPUT)

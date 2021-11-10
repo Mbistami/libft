@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/09 09:39:19 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/09 18:35:44 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,17 +59,5 @@ char			g_overlap_test[] = "hello world";
 
 int	main(void)
 {
-	char	**buffer;
-	char	value[5];
-	size_t	returned;
-
-	printf("\nResult:%sTRIM\n", ft_strtrim("$$$$$", "$"));
-	buffer = ft_split("   test1     23132 , 131323  ", ' ');
-	returned = 0;
-	printf("%ld", sizeof(buffer));
-	for (size_t i = 0; i < 4; i++)
-	{
-		printf("\n%s|%d\n", buffer[i], i);
-	}
-	
+    printf("%d", ft_memcmp("this is a test", "this is a second test", ft_strlen("this is a test")));
 }

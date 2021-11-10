@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 14:49:10 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/06 14:55:42 by mbistami         ###   ########.fr       */
+/*   Created: 2021/11/06 02:40:47 by gruz              #+#    #+#             */
+/*   Updated: 2021/11/09 17:57:02 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-char	*ft_strdup(const char *src)
+int	ft_atoi(const char *string)
 {
 	char	*s;
-	char	*source;
-	size_t	len;
-	size_t	len_changed;
+	int		i;
+	int		ne;
 
-	source = (char *)src;
-    printf("SOURCE:%s", src);
-	len = ft_strlen(source);
-	s = (char *) malloc((len + 1) * sizeof(char));
-    printf("SIZE OF DEST: %zu", sizeof(s));
-    ft_strlcpy(s, source, sizeof(s));
-	return (s);
+	s = (char *)string;
+	ne = 1;
+	i = 0;
+	while (*s != '\0')
+	{
+		if (*s != '-' && (*s != '+' && *s != ' '))
+			if (ft_isdigit(*s) == 0)
+				return (i * ne);
+		if (ft_isdigit(*s))
+			i = (*s - '0') + (10 * i);
+		if (*s == '-')
+		{
+			if (i == 0)
+				ne = -1;
+			else
+				i = i * -1;
+		}
+		s++;
+	}
+	return (i * ne);
 }

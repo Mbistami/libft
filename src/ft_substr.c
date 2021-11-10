@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 19:04:40 by gruz              #+#    #+#             */
-/*   Updated: 2021/11/09 09:27:12 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/09 18:01:54 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ char    *ft_substr(const char *src, unsigned int start, size_t len)
 
     s = (char *)src + start;
     r = (char *)ft_calloc(ft_strlen(src) + 1, sizeof(char));
+    if (r == NULL)
+        return (NULL);
     i = 0;
-    printf("\n**SubString|S:%d, L:%zu, Src:%s\n",start, len, s);
     if (start == 0 && len == 0)
         return (ft_strdup(""));
     while (len--)

@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 00:21:44 by gruz              #+#    #+#             */
-/*   Updated: 2021/11/06 00:38:43 by gruz             ###   ########.fr       */
+/*   Created: 2021/11/02 10:32:26 by mbistami          #+#    #+#             */
+/*   Updated: 2021/11/09 18:27:20 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *ptr1, const void *ptr2, size_t length)
+size_t 	ft_strlen(const char *v)
 {
-	char	*p1;
-	char	*p2;
-
-	p1 = (char *)ptr1;
-	p2 = (char *)ptr2;
-	while (length-- && (*p1 != '\0' || *p2 != '\0'))
-	{	
-		if (*(++p1) != *(++p2))
-		{
-			return (*p2 -*p1);
-		}
-	}
-	return (0);
+	int	counter;
+    if (v == NULL)
+        return  0;
+	counter = 0;
+	while (v[counter])
+        counter++;
+	return (counter);
 }

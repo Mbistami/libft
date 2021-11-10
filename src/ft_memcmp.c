@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/07 12:11:27 by gruz              #+#    #+#             */
-/*   Updated: 2021/11/07 12:36:56 by gruz             ###   ########.fr       */
+/*   Created: 2021/11/06 00:21:44 by gruz              #+#    #+#             */
+/*   Updated: 2021/11/09 18:34:33 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-char    *ft_strjoin(const char *s1, const char *s2)
+int	ft_memcmp(const void *ptr1, const void *ptr2, size_t length)
 {
-    char    *result;
-    size_t  max_len;
+	char	*p1;
+	char	*p2;
+    size_t  i;
 
-    max_len = ft_strlen(s1) + ft_strlen(s2);
-    result = (char *) ft_calloc(max_len + 1, sizeof(char));
-    if (sizeof(result) <= 0)
-        return (ft_strdup(""));
-    ft_strlcpy(result, s1, max_len);
-    ft_strlcat(result, s2, max_len + 1);
-    return(result);
+	p1 = (char *)ptr1;
+	p2 = (char *)ptr2;
+    i = 0;
+	while (length-- && (p1[i] || p2[i]))
+	{
+		if (p1[i] != p2[i])
+			return (p2[i] - p1[i]);
+        i++;
+	}
+	return (0);
 }

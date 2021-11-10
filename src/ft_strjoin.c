@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 02:40:47 by gruz              #+#    #+#             */
-/*   Updated: 2021/11/06 03:20:24 by gruz             ###   ########.fr       */
+/*   Created: 2021/11/07 12:11:27 by gruz              #+#    #+#             */
+/*   Updated: 2021/11/09 18:23:09 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	ft_atoi(const char *string)
+char    *ft_strjoin(const char *s1, const char *s2)
 {
-	char	*s;
-	int		i;
-	int		ne;
+    char    *result;
+    size_t  max_len;
 
-	s = (char *)string;
-	ne = 1;
-	i = 0;
-	while (*s != '\0')
-	{
-		printf("\n%d %c %d\n", ft_isdigit(*s), *s, i);
-		if (*s != '-' && (*s != '+' && *s != ' '))
-			if (ft_isdigit(*s) == 0)
-				return (i * ne);
-		if (ft_isdigit(*s))
-			i = (*s - '0') + (10 * i);
-		if (*s == '-')
-		{
-			if (i == 0)
-				ne = -1;
-			else
-				i = i * -1;
-		}
-		s++;
-	}
-	return (i * ne);
+    max_len = ft_strlen(s1) + ft_strlen(s2);
+    result = (char *) ft_calloc(max_len + 1, sizeof(char));
+    if(result == NULL)
+        return (NULL);
+    if (sizeof(result) <= 0)
+        return (ft_strdup(""));
+    ft_strlcpy(result, s1, max_len);
+    ft_strlcat(result, s2, max_len + 1);
+    return(result);
 }
