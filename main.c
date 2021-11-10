@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/10 18:16:38 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/10 19:27:08 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,5 @@ char			g_overlap_test[] = "hello world";
 
 int	main(void)
 {
-	printf("%d",
-		ft_memcmp("thQs is a test",
-			"this is a second test",
-			ft_strlen("this is a test")));
+	printf("%s", ft_strchr("there is so \0ma\0ny \0 \\0 in t\0his stri\0ng !\0\0\0\0", '\0'));
 }

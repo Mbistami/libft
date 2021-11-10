@@ -3,19 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbistami <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 16:33:26 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/01 20:49:48 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/10 18:32:25 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int v)
 {
-	if (v >= 65 && v <= 90)
+	if ((v >= 65 && v <= 90) || (v >= 97 && v <= 122))
 		return (1);
-	else if (v >= 97 && v <= 122)
-		return (2);
 	else
-		return (3);
+		return (0);
 }

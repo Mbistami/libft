@@ -2,6 +2,7 @@ NAME=libft.a
 SRC=./src/ft_atoi.c\
     ./src/ft_calloc.c\
     ./src/ft_isalpha.c\
+    ./src/ft_isascii.c\
     ./src/ft_isprint.c\
     ./src/ft_memchr.c\
     ./src/ft_memcpy.c\

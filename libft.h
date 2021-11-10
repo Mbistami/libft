@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:24:46 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/08 21:51:11 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/10 18:35:36 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 int				ft_isdigit(int v);
 int				ft_isupper(int v);
 int				ft_isalpha(int v);
+int				ft_isascii(int c);
 int				ft_isalnum(int v);
 int				ft_isprint(int v);
 size_t			ft_strlen(const char *v);
