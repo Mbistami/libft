@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbistami <mbistami@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/09 18:35:44 by                  ###   ########.fr       */
+/*   Updated: 2021/11/10 18:16:38 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,8 @@ char			g_overlap_test[] = "hello world";
 
 int	main(void)
 {
-    printf("%d", ft_memcmp("this is a test", "this is a second test", ft_strlen("this is a test")));
+	printf("%d",
+		ft_memcmp("thQs is a test",
+			"this is a second test",
+			ft_strlen("this is a test")));
 }
