@@ -3,40 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 00:56:01 by gruz              #+#    #+#             */
-/*   Updated: 2021/11/06 02:33:49 by gruz             ###   ########.fr       */
+/*   Updated: 2021/11/11 02:23:47 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstrn(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	i;
-	char	*b;
-	char	*l;
-	size_t	size;
+	unsigned int	i;
+	int				j;
 
 	i = 0;
-	b = (char *)big;
-	l = (char *)little;
-	size = ft_strlen(l);
-	if (size == 0)
+	j = 0;
+	if (*little == '\0' || little == NULL)
 		return ((char *)big);
-	while (len-- && size != i)
+	while (big[i] && i < len)
 	{
-		if (*b != *l)
+		j = 0;
+		while (little[j] == big[j + i] && i + j < len)
 		{
-			l = l - i;
-			i = 0;
+			if (little[j + 1] == '\0')
+				return ((char *)big + i);
+			j++;
 		}
-		b++;
-		l++;
 		i++;
 	}
-	if (size == i)
-		return ((char *)little);
-	return (0);
+	return (NULL);
 }

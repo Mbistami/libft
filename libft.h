@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:24:46 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/10 18:35:36 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/11 01:17:45 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int				ft_strncmp(const char *first,
 					const char *second, size_t length);
 void			*ft_memchr(const void *mb, int searchedChar, size_t size);
 int				ft_memcmp(const void *ptr1, const void *ptr2, size_t length);
-char			*ft_strnstrn(const char *big, const char *little, size_t len);
+char			*ft_strnstr(const char *big, const char *little, size_t len);
 void			*ft_calloc(size_t elementCount, size_t elementSize);
 char			*ft_strdup(const char *src);
 char			*ft_substr(char const *s, unsigned int start, size_t len);

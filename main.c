@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/11 00:12:05 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/11 06:04:47 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,11 @@ int	main(void)
 {
 	char     str[] = "sthere\0ma\0ny \0 \\0 in t\0his stri\0ng !\0\0\0sx";
 	char	*buffer;
-	size_t	i;
-	//printf("\n%c\n", *(*(&str + 1) - 2));
-	buffer = (char *)malloc(0);
-	printf("%zu", sizeof(buffer));
-	i = ft_strlcat(buffer, "test", 2);
-	printf("\n%zu, %s", i, buffer);
+	char	**io;
+
+	io = (char **)ft_split("      split       this for   me  !       ", ' ');
+	for(size_t i = 0;i < 5; i++)
+		printf("\n|%s\n", io[i]);
+	printf("|%s|\n",io[5]);
+	//printf("%s", ft_substr("me  !", 3, 2));
 }

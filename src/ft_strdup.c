@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 14:49:10 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/09 18:17:38 by                  ###   ########.fr       */
+/*   Updated: 2021/11/11 03:58:36 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ char	*ft_strdup(const char *src)
 	source = (char *)src;
 	len = ft_strlen(source);
 	s = (char *) malloc((len + 1) * sizeof(char));
-    if(s == NULL)
-        return (NULL);
-	ft_strlcpy(s, source, sizeof(s));
+	if (s == NULL)
+		return (NULL);
+	ft_strlcpy(s, source, len + 1);
 	return (s);
 }
