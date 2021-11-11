@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gruz <gruz@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 08:09:12 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/07 12:18:24 by gruz             ###   ########.fr       */
+/*   Updated: 2021/11/11 01:15:00 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	len_dst = ft_strlen(dst);
 	len_src = ft_strlen(src);
+	if (size == 0)
+		return (len_src + size);
 	if (size - 1 <= len_dst)
 		return (len_src + size);
 	if (!*src)
@@ -27,12 +29,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	i = 0;
 	while (len_dst + i < size - 1)
 	{
-		*(dst + (len_dst + i)) = *(src + i);
+		dst[len_dst + i] = src[i];
 		i ++;
 	}
-	if (*(dst + (len_dst + i)))
+	if (dst[len_dst + i])
 	{
-		*(dst + (len_dst + i)) = '\0';
+		dst[len_dst + i] = '\0';
 	}
 	return (len_dst + len_src);
 }
