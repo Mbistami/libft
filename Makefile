@@ -30,7 +30,9 @@ SRC=./src/ft_atoi.c\
     ./src/ft_tolower.c\
     ./src/ft_strmapi.c\
     ./src/ft_putchar_fd.c\
-    ./src/ft_putstr_fd.c
+    ./src/ft_putstr_fd.c\
+    ./src/ft_putendl_fd.c\
+    ./src/ft_putnbr_fd.c
 OBJS=$(SRC:.c=.o)
 OUTPUT=output
 
