@@ -28,7 +28,9 @@ SRC=./src/ft_atoi.c\
     ./src/ft_strtrim.c\
     ./src/ft_itoa.c\
     ./src/ft_tolower.c\
-    ./src/ft_strmapi.c
+    ./src/ft_strmapi.c\
+    ./src/ft_putchar_fd.c\
+    ./src/ft_putstr_fd.c
 OBJS=$(SRC:.c=.o)
 OUTPUT=output
 
