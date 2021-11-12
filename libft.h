@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:24:46 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/11 01:17:45 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/12 21:43:41 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,9 @@ void			*ft_calloc(size_t elementCount, size_t elementSize);
 char			*ft_strdup(const char *src);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(const char *s1, const char *s2);
-char    		*ft_strtrim(const char *s1, const char *set);
-char            **ft_split(const char *s, const char c);
+char			*ft_strtrim(const char *s1, const char *set);
+char			**ft_split(const char *s, const char c);
+char			*ft_itoa(int n);
+char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif

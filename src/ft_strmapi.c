@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 19:04:40 by gruz              #+#    #+#             */
-/*   Updated: 2021/11/11 10:25:41 by mbistami         ###   ########.fr       */
+/*   Created: 2021/11/12 21:33:48 by mbistami          #+#    #+#             */
+/*   Updated: 2021/11/12 21:54:50 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-char	*ft_substr(const char *src, unsigned int start, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*s;
-	char	*r;
 	size_t	i;
+	char	*to_return;
 
 	i = 0;
-	if (!src)
+	if (s == NULL || f == NULL)
 		return (NULL);
-	if (start >= ft_strlen(src) || ft_strlen(src) <= start)
-		return (ft_strdup(""));
-	s = (char *)src + start;
-	r = (char *)malloc((len + 1) * sizeof(*src));
-	if (r == NULL)
+	to_return = malloc((ft_strlen(s) + 1) * sizeof(*s));
+	if (to_return == NULL)
 		return (NULL);
-	if (start == 0 && len == 0)
-		return (ft_strdup(""));
-	while (len--)
+	while (s[i])
 	{
-		if (!s[i])
+		to_return[i] = f(i, s[i]);
+		if (to_return[i] == NULL)
 			return (NULL);
-		r[i] = s[i];
 		i++;
 	}
-	r[i] = '\0';
-	return (r);
+	to_return[i] = '\0';
+	return (to_return);
 }

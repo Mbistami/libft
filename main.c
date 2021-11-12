@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/11 07:00:37 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/12 21:46:06 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,14 @@ char			g_overlap_test[] = "hello world";
 	//printf("(%s)", ft_strjoin("car1231c\0 1232", "sdadadsdadadsdadad"));
 	//printf("%s", ft_strdup("text"));
 
+char	test(unsigned int i, char c)
+{
+	return (c);
+}
+
 int	main(void)
 {
-	char     str[] = "sthere\0ma\0ny \0 \\0 in t\0his stri\0ng !\0\0\0sx";
-	char	*buffer;
-	char	**io;
+	char	string[] = "long string";
 
-	io = (char **)ft_split("      split       this for   me  !       ", ' ');
-	for(size_t i = 0;i < 5; i++)
-		printf("\n|%s\n", io[i]);
-	printf("|%s|\n",io[5]);
-	//printf("%s", ft_substr("me  !", 3, 2));
+	printf("%s|\n", ft_strmapi(string, test));
 }
