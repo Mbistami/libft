@@ -1,2 +1,2 @@
-./src/*.o
+**/src/*.o
 .vscode
