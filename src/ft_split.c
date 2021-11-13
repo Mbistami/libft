@@ -5,102 +5,57 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 18:02:43 by                   #+#    #+#             */
-/*   Updated: 2021/11/11 10:19:57 by mbistami         ###   ########.fr       */
+/*   Created: 2021/11/13 02:02:43 by mbistami          #+#    #+#             */
+/*   Updated: 2021/11/13 03:35:02 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-char	*g_delimiter[2];
-
-int	count_occurrence(const char *s, const char c)
+int	count_words(char *str, char c)
 {
-	size_t	count;
-	size_t	i;
+	int	state;
+	int	wc;
 
-	if (!s || !c)
-		return (NULL);
-	count = 0;
-	i = 0;
-	while (s[i])
+	wc = 0;
+	state = 1;
+	while (*str)
 	{
-		if (s[i] == c)
-			count++;
-		i++;
-	}
-	return (count);
-}
-
-void	make_delimiter(char c, size_t *matches, size_t *i)
-{
-	g_delimiter[0] = c;
-	g_delimiter[1] = '\0';
-	*matches = 0;
-	*i = 0;
-}
-
-char	*generate_cursor(char	*r, size_t i)
-{
-	char	*cursor;
-
-	cursor = (char *)ft_strtrim(ft_substr(r, 0, i), g_delimiter);
-	return (cursor);
-}
-
-char	**split_loop(char *r, const char c, char **to_return, size_t matches)
-{
-	char	*cursor;
-	size_t	i;
-
-	i = 0;
-	while (r[i])
-	{
-		if (r[i] == c)
+		if (*str == c)
+			state = 1;
+		else if (state == 1)
 		{
-			cursor = generate_cursor(r, i);
-			r = ft_substr(r, i + 1, ((ft_strlen(r) - 1) - i));
-			if (ft_strlen(cursor) > 0)
-			{
-				to_return[matches] = (char *)cursor;
-				matches++;
-			}
-			i = 0;
+			state = 0;
+			++wc;
 		}
-		if (count_occurrence(ft_strtrim(r, g_delimiter), c) == 0)
-		{
-			to_return[matches] = ft_strtrim(r, g_delimiter);
-			to_return[matches + 1] = NULL;
-		}
-		i++;
+		++str;
 	}
-	return (to_return);
+	return (wc);
 }
 
-char	**ft_split(char const *s, const char c)
+char	**ft_split(char const *s, char c)
 {
 	size_t	i;
-	char	*r;
+	size_t	j;
 	char	**to_return;
-	size_t	matches;
+	size_t	saved;
 
-	if (!s || (!c && c != '\0'))
-		return (NULL);
-	make_delimiter(c, &matches, &i);
-	r = ft_strtrim((char *)s, g_delimiter);
-	if (s[0] == '\0')
+	i = 0;
+	j = 0;
+	saved = 0;
+	to_return = malloc((count_words(s, c) + 1) * sizeof(*to_return));
+	while (saved != count_words(s, c))
 	{
-		to_return = malloc(sizeof(char *) * 2);
-		if (!to_return)
-			return (NULL);
-		to_return[0] = NULL;
-		return (to_return);
+		while (s[i] == c)
+			i++;
+		j = i;
+		while (s[j] != c && s[j] != '\0')
+			j++;
+		printf("%d, |%d|, %d\n", i, j, count_words(s, c));
+		to_return[saved] = ft_substr(s, i, j - i);
+		i = j;
+		saved++;
 	}
-	to_return = malloc((count_occurrence(s, c) + 1) * sizeof(char *));
-	if (!to_return)
-		return (NULL);
-	to_return = (char **)split_loop(r, c, to_return, matches);
-	if (!to_return)
-		return (NULL);
+	to_return[saved] = NULL;
 	return (to_return);
 }

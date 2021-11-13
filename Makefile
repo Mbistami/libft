@@ -45,6 +45,8 @@ $(NAME):$(OBJS)
 clean:
 	rm $(NAME) && rm -rf ./src/*.o  &&\
 	echo "CLEANED"
-um:${NAME}
-	${CC} $(NAME) ${CFLAGS} main.c -o ${OUTPUT} -g
+
+re: clean all
+um: all
+	${CC} $(NAME) ${CFLAGS} main.c -o ${OUTPUT} 
 	./$(OUTPUT)

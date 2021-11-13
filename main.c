@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/12 21:46:06 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/13 03:34:43 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,18 @@ char	test(unsigned int i, char c)
 
 int	main(void)
 {
-	char	string[] = "long string";
+	char	string[] = "long   string areasd !";
+	char	**returned;
 
-	printf("%s|\n", ft_strmapi(string, test));
+	char **f;
+	
+	returned = ft_split(string, ' ');
+	//free(f);
+
+	for(int i = 0; returned[i] != NULL; i++)
+	{
+		printf("$%s$\n", returned[i]);
+		//free(returned[i]);
+	}
+	//free(returned);
 }
