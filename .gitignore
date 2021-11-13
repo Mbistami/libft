@@ -1,2 +1,2 @@
-executeMe
+./src/*.o
 .vscode
