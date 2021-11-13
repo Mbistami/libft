@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 21:33:48 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/12 21:54:50 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/13 05:16:34 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	while (s[i])
 	{
 		to_return[i] = f(i, s[i]);
-		if (to_return[i] == NULL)
-			return (NULL);
 		i++;
 	}
 	to_return[i] = '\0';

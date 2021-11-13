@@ -19,7 +19,7 @@ SRC=./src/ft_atoi.c\
     ./src/ft_isdigit.c\
     ./src/ft_isupper.c\
     ./src/ft_memcmp.c\
-    ./src/ft_memove.c\
+    ./src/ft_memmove.c\
     ./src/ft_split.c\
     ./src/ft_strdup.c\
     ./src/ft_strlcat.c\
@@ -37,7 +37,7 @@ OBJS=$(SRC:.c=.o)
 OUTPUT=output
 
 %.o:%.c
-		gcc -c -I ./ -o $@ $<
+		gcc -c -I ./ -o $@ $< -Wall -Werror -Wextra
 all:$(NAME)
 
 $(NAME):$(OBJS)

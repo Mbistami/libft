@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 14:49:10 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/11 03:58:36 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/13 05:15:52 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_strdup(const char *src)
 	char	*s;
 	char	*source;
 	size_t	len;
-	size_t	len_changed;
 
 	source = (char *)src;
 	len = ft_strlen(source);
