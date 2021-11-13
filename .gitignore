@@ -1,2 +1,3 @@
 **/src/*.o
+libft.a
 .vscode
