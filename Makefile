@@ -32,7 +32,10 @@ SRC=./src/ft_atoi.c\
     ./src/ft_putchar_fd.c\
     ./src/ft_putstr_fd.c\
     ./src/ft_putendl_fd.c\
-    ./src/ft_putnbr_fd.c
+    ./src/ft_putnbr_fd.c\
+    ./src/ft_lstnew.c\
+    ./src/ft_lstadd_front.c\
+    ./src/ft_lstsize.c
 OBJS=$(SRC:.c=.o)
 OUTPUT=output
 

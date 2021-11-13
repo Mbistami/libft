@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/13 03:57:30 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/13 16:32:22 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	test(unsigned int i, char c)
 
 int	main(void)
 {
-	char	string[] = "\0long   string areasd !    ";
+	char	string[] = "ong   string areasd !    ";
 	char	**returned;
 
 	char **f;

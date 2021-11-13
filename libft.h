@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:24:46 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/13 05:18:09 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/13 16:59:29 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 int				ft_isdigit(int v);
 int				ft_isupper(int v);
 int				ft_isalpha(int v);
@@ -55,11 +60,8 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+t_list			*ft_lstnew(void *content);
+void			ft_lstadd_front(t_list **alist, t_list *new);
+int				ft_lstsize(t_list *lst);
 
 #endif
