@@ -35,7 +35,8 @@ SRC=./src/ft_atoi.c\
     ./src/ft_putnbr_fd.c\
     ./src/ft_lstnew.c\
     ./src/ft_lstadd_front.c\
-    ./src/ft_lstsize.c
+    ./src/ft_lstsize.c\
+    ./src/ft_lstlast.c
 OBJS=$(SRC:.c=.o)
 OUTPUT=output
 
