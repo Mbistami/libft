@@ -1,4 +1,4 @@
-**/src/*.o
-libft.a
+*.o
+*.a
 .vscode
 output.dSYM
