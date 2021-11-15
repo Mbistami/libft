@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 20:48:02 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/14 22:27:54 by mbistami         ###   ########.fr       */
+/*   Created: 2021/11/15 02:40:27 by mbistami          #+#    #+#             */
+/*   Updated: 2021/11/15 02:47:21 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-char	*ft_strchr(const char	*string, int searchChar)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	char	*s;
-	int		i;
-	char	c;
+	t_list	*tmp;
 
-	c = (char)searchChar;
-	s = (char *)string;
-	i = 0;
-	while (s[i])
+	while (lst != NULL)
 	{
-		if (s[i] == c)
-			return (&s[i]);
-		i++;
+		tmp = lst->next;
+		f(lst->content);
+		lst = tmp;
 	}
-	if (s[i] == '\0' && searchChar == '\0')
-		return (&s[i]);
-	return (NULL);
 }

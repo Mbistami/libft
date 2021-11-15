@@ -39,7 +39,10 @@ SRC=./src/ft_atoi.c\
     ./src/ft_lstlast.c\
     ./src/ft_striteri.c\
     ./src/ft_lstadd_back.c\
-    ./src/ft_lstdelone.c
+    ./src/ft_lstdelone.c\
+    ./src/ft_lstclear.c\
+    ./src/ft_lstiter.c\
+    ./src/ft_lstmap.c
 OBJS=$(SRC:.c=.o)
 OUTPUT=output
 

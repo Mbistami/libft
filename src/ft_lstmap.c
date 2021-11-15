@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 20:48:02 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/14 22:27:54 by mbistami         ###   ########.fr       */
+/*   Created: 2021/11/15 02:48:22 by mbistami          #+#    #+#             */
+/*   Updated: 2021/11/15 03:41:45 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char	*ft_strchr(const char	*string, int searchChar)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*s;
-	int		i;
-	char	c;
+	t_list	*to_return;
 
-	c = (char)searchChar;
-	s = (char *)string;
-	i = 0;
-	while (s[i])
+	while (lst != NULL)
 	{
-		if (s[i] == c)
-			return (&s[i]);
-		i++;
+		ft_lstadd_back(&to_return, ft_lstnew(f(lst->content)));
+		if (f(lst->content) == NULL)
+			ft_lstiter(to_return, del);
+		lst = lst->next;
 	}
-	if (s[i] == '\0' && searchChar == '\0')
-		return (&s[i]);
-	return (NULL);
+	return (to_return);
 }

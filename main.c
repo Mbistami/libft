@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/14 20:13:57 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/15 02:37:54 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,20 +64,21 @@ char	test(unsigned int i, char c)
 
 int	main(void)
 {
-	char	string[] = "ong   string areasd !    ";
-	char	**returned;
+	t_list			**big_list;
+	t_list			*new_list;
+	t_list			*added_list;
+	t_list			*iterator;
+	t_list			*test;
 
-	char **f;
-	
-	returned = ft_split(string, ' ');
-	//free(f);
-
-	for(int i = 0; returned[i] != NULL; i++)
+	new_list = ft_lstnew("main list");
+	printf("%s", new_list->content);
+	added_list = ft_lstnew("added_list");
+	new_list->next = added_list;
+	iterator = new_list;
+	while (iterator->next != NULL)
 	{
-		printf("$%s$\n", returned[i]);
-		//free(returned[i]);
+		printf("%s", iterator->content);
+		iterator = iterator->next;
 	}
-
-	printf("%s", ft_strchr("test", 't' + 256));
-	//free(returned);
+	test = ft_lstnew("leaks");
 }
