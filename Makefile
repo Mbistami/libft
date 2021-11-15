@@ -17,7 +17,6 @@ SRC=ft_atoi.c\
     ft_bzero.c\
     ft_isalnum.c\
     ft_isdigit.c\
-    ft_isupper.c\
     ft_memcmp.c\
     ft_memmove.c\
     ft_split.c\

@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 10:22:12 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/15 21:15:45 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/15 22:47:02 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ char	*ft_itoa(int n)
 		return (ft_strdup("-2147483648"));
 	i = allocation_size(n);
 	if (n == 0)
-		return (ft_strdup("0\0"));
-	to_return = malloc((allocation_size(n)) * sizeof(*to_return));
+		return (ft_strdup("0"));
+	to_return = malloc((allocation_size(n) + 1) * sizeof(*to_return));
 	if (to_return == NULL)
 		return (NULL);
 	if (n < 0)
