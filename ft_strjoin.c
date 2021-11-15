@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 12:11:27 by gruz              #+#    #+#             */
-/*   Updated: 2021/11/15 18:44:50 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/15 21:11:53 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	if (sizeof(result) <= 0)
 		return (ft_strdup(""));
 	ft_strlcpy(result, s1, max_len + 1);
-	ft_strlcat(result, s2, max_len + 1);
+	ft_strlcat(result, (char *)s2, max_len + 1);
 	return (result);
 }
