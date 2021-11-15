@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/07 12:11:27 by gruz              #+#    #+#             */
-/*   Updated: 2021/11/15 18:44:05 by mbistami         ###   ########.fr       */
+/*   Created: 2021/11/12 22:48:10 by mbistami          #+#    #+#             */
+/*   Updated: 2021/11/12 23:07:44 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2)
+void	ft_putstr_fd(char *s, int fd)
 {
-	char	*result;
-	size_t	max_len;
+	size_t	i;
 
-	if (!s1)
-		return (NULL);
-	max_len = ft_strlen(s1) + ft_strlen(s2);
-	result = (char *) ft_calloc(max_len + 1, sizeof(char));
-	if (result == NULL)
-		return (NULL);
-	if (sizeof(result) <= 0)
-		return (ft_strdup(""));
-	ft_strlcpy(result, s1, max_len);
-	printf("%sss", result);
-	ft_strlcat(result, s2, max_len);
-	return (result);
+	i = 0;
+	if (s)
+	{
+		while (s[i])
+		{
+			write(fd, &s[i], 1);
+			i++;
+		}
+	}
 }

@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/07 12:11:27 by gruz              #+#    #+#             */
-/*   Updated: 2021/11/15 18:44:05 by mbistami         ###   ########.fr       */
+/*   Created: 2021/11/15 02:48:22 by mbistami          #+#    #+#             */
+/*   Updated: 2021/11/15 03:41:45 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*result;
-	size_t	max_len;
+	t_list	*to_return;
 
-	if (!s1)
-		return (NULL);
-	max_len = ft_strlen(s1) + ft_strlen(s2);
-	result = (char *) ft_calloc(max_len + 1, sizeof(char));
-	if (result == NULL)
-		return (NULL);
-	if (sizeof(result) <= 0)
-		return (ft_strdup(""));
-	ft_strlcpy(result, s1, max_len);
-	printf("%sss", result);
-	ft_strlcat(result, s2, max_len);
-	return (result);
+	while (lst != NULL)
+	{
+		ft_lstadd_back(&to_return, ft_lstnew(f(lst->content)));
+		if (f(lst->content) == NULL)
+			ft_lstiter(to_return, del);
+		lst = lst->next;
+	}
+	return (to_return);
 }

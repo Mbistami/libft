@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/07 12:11:27 by gruz              #+#    #+#             */
-/*   Updated: 2021/11/15 18:44:05 by mbistami         ###   ########.fr       */
+/*   Created: 2021/11/04 20:48:02 by mbistami          #+#    #+#             */
+/*   Updated: 2021/11/15 15:07:10 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_strchr(const char	*string, int searchChar)
 {
-	char	*result;
-	size_t	max_len;
+	char	*s;
+	int		i;
 
-	if (!s1)
-		return (NULL);
-	max_len = ft_strlen(s1) + ft_strlen(s2);
-	result = (char *) ft_calloc(max_len + 1, sizeof(char));
-	if (result == NULL)
-		return (NULL);
-	if (sizeof(result) <= 0)
-		return (ft_strdup(""));
-	ft_strlcpy(result, s1, max_len);
-	printf("%sss", result);
-	ft_strlcat(result, s2, max_len);
-	return (result);
+	s = (char *)string;
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == (char)searchChar)
+			return (&s[i]);
+		i++;
+	}
+	if (s[i] == '\0' && (char)searchChar == '\0')
+		return (&s[i]);
+	return (NULL);
 }

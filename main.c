@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/15 18:14:36 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/15 18:42:42 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,5 @@ int	main(void)
 	char 	*src = (char *)"AAAAAAAAA";
 
 	memset(dest, 'C', 15);
-	string = ft_strlcat(dest, src, 17);
-	printf("%d%s", string, dest);
+	printf("%s", ft_strjoin("42", ""));
 }

@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_memove.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/07 12:11:27 by gruz              #+#    #+#             */
-/*   Updated: 2021/11/15 18:44:05 by mbistami         ###   ########.fr       */
+/*   Created: 2021/11/03 07:06:38 by mbistami          #+#    #+#             */
+/*   Updated: 2021/11/12 22:34:22 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2)
+void	*ft_memmove(void *dest, void *src, size_t len)
 {
-	char	*result;
-	size_t	max_len;
+	char		*d;
+	char		*s;
+	char		*lasts;
+	char		*lastd;
 
-	if (!s1)
+	d = dest;
+	s = src;
+	if (dest == NULL && src == NULL)
 		return (NULL);
-	max_len = ft_strlen(s1) + ft_strlen(s2);
-	result = (char *) ft_calloc(max_len + 1, sizeof(char));
-	if (result == NULL)
-		return (NULL);
-	if (sizeof(result) <= 0)
-		return (ft_strdup(""));
-	ft_strlcpy(result, s1, max_len);
-	printf("%sss", result);
-	ft_strlcat(result, s2, max_len);
-	return (result);
+	if (d < s)
+		while (len--)
+			*d++ = *s++;
+	else
+	{
+		lasts = (char *)s + (len - 1);
+		lastd = d + (len - 1);
+		while (len--)
+			*lastd-- = *lasts--;
+	}
+	return (dest);
 }

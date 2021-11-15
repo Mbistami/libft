@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/07 12:11:27 by gruz              #+#    #+#             */
-/*   Updated: 2021/11/15 18:44:05 by mbistami         ###   ########.fr       */
+/*   Created: 2021/11/06 19:04:40 by gruz              #+#    #+#             */
+/*   Updated: 2021/11/15 14:37:38 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_substr(const char *src, unsigned int start, size_t len)
 {
-	char	*result;
-	size_t	max_len;
+	char	*r;
+	size_t	i;
+	size_t	len_src;
 
-	if (!s1)
+	i = 0;
+	if (!src)
 		return (NULL);
-	max_len = ft_strlen(s1) + ft_strlen(s2);
-	result = (char *) ft_calloc(max_len + 1, sizeof(char));
-	if (result == NULL)
-		return (NULL);
-	if (sizeof(result) <= 0)
+	len_src = ft_strlen(src);
+	if (start > len_src)
 		return (ft_strdup(""));
-	ft_strlcpy(result, s1, max_len);
-	printf("%sss", result);
-	ft_strlcat(result, s2, max_len);
-	return (result);
+	if (len_src < len)
+		r = (char *)malloc((len_src + 1) * sizeof(*src));
+	else
+		r = (char *)malloc((len + 1) * sizeof(*src));
+	if (!r)
+		return (NULL);
+	while (i < len)
+	{
+		if (!src[i + start])
+			return (r);
+		r[i] = src[i + start];
+		i++;
+	}
+	r[i] = '\0';
+	return (r);
 }

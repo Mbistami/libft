@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/07 12:11:27 by gruz              #+#    #+#             */
-/*   Updated: 2021/11/15 18:44:05 by mbistami         ###   ########.fr       */
+/*   Created: 2021/11/12 21:33:48 by mbistami          #+#    #+#             */
+/*   Updated: 2021/11/13 05:16:34 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*result;
-	size_t	max_len;
+	size_t	i;
+	char	*to_return;
 
-	if (!s1)
+	i = 0;
+	if (s == NULL || f == NULL)
 		return (NULL);
-	max_len = ft_strlen(s1) + ft_strlen(s2);
-	result = (char *) ft_calloc(max_len + 1, sizeof(char));
-	if (result == NULL)
+	to_return = malloc((ft_strlen(s) + 1) * sizeof(*s));
+	if (to_return == NULL)
 		return (NULL);
-	if (sizeof(result) <= 0)
-		return (ft_strdup(""));
-	ft_strlcpy(result, s1, max_len);
-	printf("%sss", result);
-	ft_strlcat(result, s2, max_len);
-	return (result);
+	while (s[i])
+	{
+		to_return[i] = f(i, s[i]);
+		i++;
+	}
+	to_return[i] = '\0';
+	return (to_return);
 }
