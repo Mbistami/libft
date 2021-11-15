@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:24:46 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/15 18:35:09 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/15 21:08:52 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void			*ft_bzero(void *s, int len_to_fill);
 void			*ft_memcpy(void *dest, const char *src, size_t size_of_src);
 void			*ft_memmove(void *dest, void *src, size_t siz_of_src);
 size_t			ft_strlcpy(char *dst, const char *src, size_t size_of_dst);
-size_t			ft_strlcat(char *dst, const char *src, size_t size_of_dst);
+size_t			ft_strlcat(char *dst, char *src, size_t dstsize);
 unsigned char	ft_tolower(int c);
 unsigned char	ft_toupper(int c);
 char			*ft_strchr(const char *string, int searchChar);

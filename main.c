@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/15 18:42:42 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/15 20:19:41 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ char			g_overlap_test[] = "hello world";
 int	main(void)
 {
 	int		string;
-	char	dest[30];
-	char 	*src = (char *)"AAAAAAAAA";
+	char	dest[4] = "";
+	char 	*src = (char *)"thx to ntoniolo for this test !";
 
-	memset(dest, 'C', 15);
-	printf("%s", ft_strjoin("42", ""));
+	//ft_strlcat(dest, src, sizeof(char));
+	printf("%zu %s", strlcat(dest, src, ft_strlen(src)), dest);
 }
