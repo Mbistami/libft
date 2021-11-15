@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 07:08:52 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/15 02:37:54 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/15 14:38:42 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,30 +55,12 @@ char			g_overlap_test[] = "hello world";
 	//printf("%s", buffer);
 	//printf("||%s||", ft_substr("Source", 2, 3));
 	//printf("(%s)", ft_strjoin("car1231c\0 1232", "sdadadsdadadsdadad"));
-	//printf("%s", ft_strdup("text"));
-
-char	test(unsigned int i, char c)
-{
-	return (c);
-}
+	//printf("%s", ft_strdup("text"));ßß
 
 int	main(void)
 {
-	t_list			**big_list;
-	t_list			*new_list;
-	t_list			*added_list;
-	t_list			*iterator;
-	t_list			*test;
+	char	*string;
 
-	new_list = ft_lstnew("main list");
-	printf("%s", new_list->content);
-	added_list = ft_lstnew("added_list");
-	new_list->next = added_list;
-	iterator = new_list;
-	while (iterator->next != NULL)
-	{
-		printf("%s", iterator->content);
-		iterator = iterator->next;
-	}
-	test = ft_lstnew("leaks");
+	string = ft_strtrim("   xxx   xxx", " x");
+	printf("%s", string);
 }

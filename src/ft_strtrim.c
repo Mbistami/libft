@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 12:37:27 by gruz              #+#    #+#             */
-/*   Updated: 2021/11/11 05:57:08 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/15 14:46:01 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	stop(char c, char *set)
 {
+	if (c == '\0')
+		return (1);
 	while (*set)
 	{
 		if (*set == c)
@@ -37,6 +39,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 	start = i;
 	if (ft_strlen(s1) > 1)
 		i = ft_strlen(s1) - 1;
+	if (start == ft_strlen(s1))
+		return (ft_strdup(""));
 	while (stop(s1[i], (char *)set) == 0)
 		i--;
 	result = (char *)ft_substr(s1, start, ((i - start) + 1));
