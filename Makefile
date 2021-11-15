@@ -53,7 +53,7 @@ all:$(NAME)
 $(NAME):$(OBJS)
 	ar rc $(NAME) $(OBJS)
 clean:
-	rm $(NAME) && rm -rf ./src/*.o  &&\
+	rm -f $(NAME) && rm -rf ./src/*.o  &&\
 	echo "CLEANED"
 
 re: clean all

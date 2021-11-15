@@ -6,11 +6,25 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 02:40:47 by gruz              #+#    #+#             */
-/*   Updated: 2021/11/11 03:45:33 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/15 16:43:37 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
+
+int	is_white_space(char c)
+{
+	char	*white_spaces;
+
+	white_spaces = " \t\n\v\f\r";
+	while (*white_spaces)
+	{
+		if (*white_spaces == c)
+			return (1);
+		white_spaces++;
+	}
+	return (0);
+}
 
 int	calculate_return(int ne)
 {
@@ -20,42 +34,31 @@ int	calculate_return(int ne)
 		return (0);
 }
 
-int	atoi_process(int ne, char *s, long int i)
-{
-	while (*s != '\0')
-	{
-		if (i > 999999998)
-		{
-			return (calculate_return(ne));
-		}
-		if (((*s != '-') && *s != '\r') && ((*s != '+') && (*s != '\f')))
-			if ((*s != '\n' && *s != '\t') && (*s != ' ' && *s != '\v'))
-				if (ft_isdigit(*s) == 0)
-					return (i * ne);
-		if (ft_isdigit(*s))
-			i = (*s - '0') + (10 * i);
-		if (*s == '-' || *s == '+')
-		{
-			if (ft_isdigit(*(s + 1)) == 0)
-				return (0);
-			if (i == 0 && *s == '-')
-				ne = -1;
-			else
-				i = i * -1;
-		}
-		s++;
-	}
-	return (i * ne);
-}
-
 int	ft_atoi(const char *string)
 {
-	char		*s;
-	long int	i;
-	int			ne;
+	size_t	i;
+	int		ne;
+	int		to_return;
 
-	s = (char *)string;
-	ne = 1;
 	i = 0;
-	return (atoi_process(ne, s, i));
+	ne = 1;
+	to_return = 0;
+	while (is_white_space(string[i]) == 1)
+		i++;
+	if (string[i] == '\0')
+		return (0);
+	if (string[i] == '-' || string[i] == '+')
+	{
+		if (string[i] == '-')
+			ne = -1;
+		i++;
+	}
+	while (ft_isdigit(string[i]) != 0)
+	{
+		if (to_return > 999999998)
+			return (calculate_return(ne));
+		to_return = (string[i] - '0') + (10 * to_return);
+		i++;
+	}
+	return (to_return * ne);
 }

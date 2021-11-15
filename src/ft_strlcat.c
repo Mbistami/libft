@@ -6,7 +6,7 @@
 /*   By: mbistami <mbistami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 08:09:12 by mbistami          #+#    #+#             */
-/*   Updated: 2021/11/14 20:52:05 by mbistami         ###   ########.fr       */
+/*   Updated: 2021/11/15 18:16:51 by mbistami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dst[len_dst + i] = src[i];
 		i ++;
 	}
-	if (dst[len_dst + i])
-	{
-		dst[len_dst + i] = '\0';
-	}
+	dst[len_dst + i] = '\0';
 	return (len_dst + len_src);
 }
