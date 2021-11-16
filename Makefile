@@ -42,7 +42,17 @@ SRC=ft_atoi.c\
     ft_lstclear.c\
     ft_lstiter.c\
     ft_lstmap.c
+SRCS_B=ft_lstnew.c\
+    ft_lstadd_front.c\
+    ft_lstsize.c\
+    ft_lstlast.c\
+    ft_lstadd_back.c\
+    ft_lstdelone.c\
+    ft_lstclear.c\
+    ft_lstiter.c\
+    ft_lstmap.c
 OBJS=$(SRC:.c=.o)
+OBJS_B=$(SRCS_B:.c=.o)
 OUTPUT=output
 
 %.o:%.c
@@ -52,10 +62,14 @@ all:$(NAME)
 $(NAME):$(OBJS)
 	ar rc $(NAME) $(OBJS)
 clean:
-	rm -f $(NAME) && rm -rf *.o  &&\
+	rm -rf $(OBJS) $(OBJS_B)
 	echo "CLEANED"
 
 re: clean all
+fclean: clean
+		rm -rf $(NAME)
 um: all
 	${CC} $(NAME) ${CFLAGS} main.c -o ${OUTPUT} 
 	./$(OUTPUT)
+bonus: $(OBJS_B)
+	ar rc $(NAME) $(OBJS_B)
