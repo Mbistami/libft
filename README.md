@@ -1,6 +1,7 @@
 ## libft
 # Mandatory
-```ft_atoi.c
+```
+ft_atoi.c
 ft_calloc.c
 ft_isalpha.c
 ft_isascii.c
@@ -42,9 +43,11 @@ ft_lstadd_back.c
 ft_lstdelone.c
 ft_lstclear.c
 ft_lstiter.c
-ft_lstmap.c```
+ft_lstmap.c
+```
 # Bonus
-```ft_lstnew.c
+```
+ft_lstnew.c
 ft_lstadd_front.c
 ft_lstsize.c
 ft_lstlast.c
@@ -52,7 +55,13 @@ ft_lstadd_back.c
 ft_lstdelone.c
 ft_lstclear.c
 ft_lstiter.c
-ft_lstmap.c```
+ft_lstmap.c
+```
 
 ## Usage
 make `bonus|re|clean|fclean|all|um(Use Main)`
+
+all: makes all without bonus.
+re: remake all.
+clean: cleans.
+um: use main.c
